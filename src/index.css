@@ -1,13 +1,127 @@
-body {
+*,
+*::before,
+*::after {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+.ip-address-tracker__bg-img {
+  background: url(./assets//pattern-bg.png);
+  height:250px;
+  background-size: cover;
+  text-align: center;
+  padding-top: 20px;
+}
+.ip-address-tracker__title {
+  color: #fff;
+}
+
+.form {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.form__btn,.form__input {
+  border: 0;
+  align-self: stretch;
+}
+.form__input {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-left: 15px;
+  font-size: 1.05rem;
+  color: #888;
+  flex: 1;
+}
+.form__input:focus {
+  outline:transparent;
+}
+.form__btn {
+  align-self: stretch;
+  padding: .5rem 1rem;
+  background-color: #222;
+  color: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+
+.result {
+  display: flex;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  position: relative;
+  top: 60px;
+  padding: 20px;
+  z-index: 9999;
+}
+.result__box {
+  position: relative;
+  flex: 1;
+  text-align: left;
+  padding-left: 20px;
+}
+.result__box:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 0;
+  right: 0;
+  width: 1px; 
+  background-color:rgb(197, 197, 197);
+}
+
+.result__text {
+  font-size: .7rem;
+  color: #888;
+  font-weight: bold;
+}
+.result__output {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.map__box {
+  height:600px;
+}
+.error {
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error__title {
+  font-weight: bold;
+}
+
+@media(max-width: 650px){
+  .form {
+    width: 90%;
+  }
+  .result {
+    flex-direction: column;
+    align-items: center;
+    text-align:center;
+  }
+  .result__box {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .result__box::before {
+    display: none;
+  }
 }
